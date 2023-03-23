@@ -1,0 +1,114 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "arcanedev/log-viewer": "^4.5",
+        "barryvdh/laravel-dompdf": "^0.8.2",
+        "benjaminhirsch/nova-slug-field": "^1.1",
+        "cendekia/nova-setting-tool": "^0.0.2",
+        "cloudstudio/resource-generator": "^1.1",
+        "dmitrybubyakin/nova-medialibrary-field": "^1.1",
+        "encore/laravel-admin": "1.5.*",
+        "fideloper/proxy": "~4.0",
+        "gregoriohc/laravel-nova-theme-responsive": "^0.6.1",
+        "jeroennoten/laravel-adminlte": "^1.23",
+        "kabbouchi/nova-logs-tool": "^0.0.8",
+        "keboola/json-parser": "^2.1",
+        "kokarat/device-offline": "*",
+        "kokarat/dlt-master-file": "*",
+        "kokarat/imei-status": "*",
+        "kokarat/raw-data": "*",
+        "kokarat/thaiaddress": "*",
+        "koss-shtukert/laravel-nova-select2-auto-complete": "^1.11",
+        "laravel/framework": "5.8.*",
+        "laravel/nova": "*",
+        "laravel/scout": "^6.1",
+        "laravel/tinker": "~1.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "maatwebsite/laravel-nova-excel": "^1.1",
+        "pdewit/nova-external-url": "^1.0",
+        "spatie/nova-backup-tool": "^1.1",
+        "techouse/select-auto-complete": "^1.0"
+    },
+    "require-dev": {
+        "filp/whoops": "~2.0",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~7.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/DltMasterFile"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/DeviceOffline"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/RawData"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/ImeiStatus"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Thaiaddress"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Thaiaddress"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}

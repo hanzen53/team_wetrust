@@ -1,0 +1,51 @@
+{
+  "name": "kabbouchi/laravel-ward",
+  "description": "",
+  "keywords": [
+    "laravel",
+    "ward",
+    "log",
+    "logs",
+    "viewer"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Georges KABBOUCHI",
+      "email": "georges.kabbouchi@gmail.com"
+    }
+  ],
+  "require": {
+    "illuminate/contracts": "~5.5",
+    "illuminate/queue": "~5.5",
+    "illuminate/support": "~5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KABBOUCHI\\Ward\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KABBOUCHI\\Ward\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "KABBOUCHI\\Ward\\WardServiceProvider"
+      ],
+      "aliases": {
+        "Ward": "KABBOUCHI\\Ward\\Ward"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}
